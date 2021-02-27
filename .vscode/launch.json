@@ -1,0 +1,17 @@
+{
+
+    "version": "0.2.0",
+    "configurations": [{
+            "type": "probe_rs",
+            "request": "attach",
+            "name": "Example: gpio_hal_blinky, attach to debugger",
+            "program": "${workspaceRoot}/target/thumbv6m-none-eabi/debug/examples/gpio_hal_blinky",
+            "cwd": "${workspaceRoot}",
+            "reset": true,
+            "halt_after_reset": false,
+            "server_mode": true,
+            "server_port": 8800,
+            "chip": "STM32F411RETx"
+        }
+    ]
+}
