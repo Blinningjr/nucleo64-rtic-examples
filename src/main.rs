@@ -76,12 +76,17 @@ const APP: () = {
         test_enum2 = black_box(test_enum2);
         test_enum3 = black_box(test_enum3);
         test_struct = black_box(test_struct);
-//        black_box(&cx);
 
+        black_box(&cx);
+        //unsafe{asm!{"bkpt"};}  //asm::bkpt();
+        black_box(&cx);
+
+//        black_box(&cx.resources.led);
         cx.schedule.led_off(cx.scheduled + PERIOD.cycles()).unwrap();
         cx.resources.led.set_high().unwrap();
+//        black_box(&cx.resources.led);
 
-        unsafe{asm!{"bkpt"};}  //asm::bkpt();
+        //unsafe{asm!{"bkpt"};}  //asm::bkpt();
 
 //        black_box(&cx);
         black_box(my_num);
@@ -104,6 +109,17 @@ const APP: () = {
         //black_box(my_num);
         //black_box(test_enum);
     }
+
+
+    #[idle]
+    fn idle(_cx: idle::Context) -> ! {
+//        rprintln!("idle");
+//        panic!("panic");
+        loop {
+            continue;
+        }
+    }
+
 
     extern "C" {
         fn EXTI0();

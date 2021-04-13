@@ -4,8 +4,8 @@
     "configurations": [{
             "type": "probe_rs",
             "request": "attach",
-            "name": "Example: gpio_hal_blinky, attach to debugger",
-            "program": "${workspaceRoot}/target/thumbv6m-none-eabi/debug/examples/gpio_hal_blinky",
+            "name": "Example: nucleo-rtic-blinking-led, attach to debugger",
+            "program": "${workspaceRoot}/target/thumbv7em-none-eabi/debug/nucleo-rtic-blinking-led",
             "cwd": "${workspaceRoot}",
             "reset": true,
             "halt_after_reset": false,
